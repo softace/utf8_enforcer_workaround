@@ -15,3 +15,12 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+
+*SPIKE*
+*emfile.lock
+tags
+
+# For emacs:
+*~
+#\#*
+#.\#*
