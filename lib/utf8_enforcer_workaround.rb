@@ -6,8 +6,7 @@ module Utf8EnforcerWorkaround
     module Helpers
       module FormTagHelper
         def utf8_enforcer_tag_with_tag_removed
-          Rails.logger.debug browser.meta.to_s
-          if browser.ie?
+          if respond_to?(:browser) && browser.ie?
             utf8_enforcer_tag_without_tag_removed
           else
             "".html_safe
