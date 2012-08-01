@@ -19,8 +19,8 @@ Gem::Specification.new do |gem|
 
   gem.rubyforge_project = "utf8_enforcer_workaround"
 
-  gem.add_dependency('rails', '>= 3.0.0')
-  gem.add_dependency('browser')
+  gem.add_dependency('rails', '>= 3.2.0')
+  gem.add_dependency('browser', '>= 0.1.0')
 
   gem.add_development_dependency('bundler')
   gem.add_development_dependency('rake')
@@ -29,6 +29,4 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('sqlite3', '~> 1.3')
   gem.add_development_dependency('aruba')
   gem.add_development_dependency('capybara')
-  gem.add_development_dependency('launchy')
-  gem.add_development_dependency('debugger')
 end
