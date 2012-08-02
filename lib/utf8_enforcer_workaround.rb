@@ -6,7 +6,7 @@ module Utf8EnforcerWorkaround
     module Helpers
       module FormTagHelper
         def utf8_enforcer_tag_with_tag_removed
-          if respond_to?(:browser) && browser.ie?
+          if @utf8_enforcer_tag_enabled
             utf8_enforcer_tag_without_tag_removed
           else
             "".html_safe
@@ -16,6 +16,18 @@ module Utf8EnforcerWorkaround
     end
   end
 
+  module ActionController
+    module Base
+      extend ActiveSupport::Concern
+      module ClassMethods
+        def utf8_enforcer_workaround
+          before_filter do
+            @utf8_enforcer_tag_enabled = browser.ie?
+          end
+        end
+      end
+    end
+  end
 end
 
 ActionView::Helpers::FormTagHelper.class_eval do
@@ -24,3 +36,5 @@ ActionView::Helpers::FormTagHelper.class_eval do
 end
 
 require "browser" # This needs to be required at the end...
+ActionController::Base.send(:include, Utf8EnforcerWorkaround::ActionController::Base)
+
