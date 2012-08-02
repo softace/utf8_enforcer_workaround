@@ -1,8 +1,16 @@
-# Utf8EnforcerWorkaround
+Utf8EnforcerWorkaround
+======================
 
-TODO: Write a gem description
+Make utf8 enforcer tag to be applied only for non-standards-complying browsers.
 
-## Installation
+
+Requirements
+------------
+
+`utf8_enforcer_workaround` depends on Rails 3.2 and `browser`
+
+Installation
+------------
 
 Add this line to your application's Gemfile:
 
@@ -16,14 +24,26 @@ Or install it yourself as:
 
     $ gem install utf8_enforcer_workaround
 
-## Usage
+Usage
+-----
 
-TODO: Write usage instructions here
+Add this line of code in your ApplicationController:
 
-## Contributing
+    utf8_enforcer_workaround
+
+
+Contributing
+------------
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+Copyright
+---------
+
+Copyright (c) 2012 Jarl Friis. See LICENSE.txt for
+further details.
+
