@@ -1,7 +1,8 @@
 Utf8EnforcerWorkaround
 ======================
 
-Make utf8 enforcer tag to be applied only for non-standards-complying browsers.
+Make utf8 enforcer tag to be applied only for non-standards-complying
+browsers.
 
 
 Requirements
@@ -31,6 +32,14 @@ Add this line of code in your ApplicationController:
 
     utf8_enforcer_workaround
 
+Alternatively you can write your own logic in your
+ApplicationController to decide whether or not to include the utf8
+enforcer tag. Here is an example showing the default logic:
+
+    before_filter do
+      @utf8_enforcer_tag_enabled = browser.ie?
+    end
+   
 
 Contributing
 ------------
