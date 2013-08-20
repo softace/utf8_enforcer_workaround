@@ -34,7 +34,7 @@ module RailsCommandHelpers
   def new_application_command(name)
     case framework_version
     when /^2/ then "rails #{name}"
-    when /^3/ then "rails new #{name}"
+    when /^3/ then "rails new #{name} --skip-sprockets --skip-javascript"
     when /^4/ then "rails new #{name} --skip-sprockets --skip-javascript"
     end
   end
