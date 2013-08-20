@@ -19,9 +19,17 @@ end
 
 #require 'rspec/expectations'
 Capybara.register_driver(:rack_test_compliant) do |app|
-  Capybara::RackTest::Driver.new(app, headers: { 'User-Agent' => 'Firefox' })
+  agent_string = 'Firefox'
+  Capybara::RackTest::Driver.new(app, headers: {
+                                   'User-Agent'      => agent_string, ##Rails 3.x
+                                   'HTTP_USER_AGENT' => agent_string  ##Rails 4.x
+                                 })
 end
 
 Capybara.register_driver(:rack_test_non_compliant) do |app|
-  Capybara::RackTest::Driver.new(app, headers: { 'User-Agent' => 'Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1)' })
+  agent_string = 'Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1)'
+  Capybara::RackTest::Driver.new(app, headers: {
+                                   'User-Agent'      => agent_string, ##Rails 3.x
+                                   'HTTP_USER_AGENT' => agent_string  ##Rails 4.x
+                                 })
 end

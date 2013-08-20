@@ -1,6 +1,6 @@
 Given /^I generate a new rails application$/ do
   steps %{
-    When I run `bundle exec #{new_application_command} #{APP_NAME}`
+    When I run `bundle exec #{new_application_command(APP_NAME)} `
     And I cd to "#{APP_NAME}"
     And I turn off class caching
     And I configure the application to use "utf8_enforcer_workaround" from this project

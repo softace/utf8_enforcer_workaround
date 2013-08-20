@@ -29,4 +29,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('sqlite3', '~> 1.3')
   gem.add_development_dependency('aruba')
   gem.add_development_dependency('capybara')
+  gem.add_development_dependency('launchy')
 end

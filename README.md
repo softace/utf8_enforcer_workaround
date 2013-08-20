@@ -8,7 +8,12 @@ browsers.
 Requirements
 ------------
 
-`utf8_enforcer_workaround` depends on Rails 3.2 and `browser`
+`utf8_enforcer_workaround` depends on Rails and `browser`
+
+### Supported Rails versions
+
+* Rails 3.x
+* Rails 4.x
 
 Installation
 ------------
@@ -53,6 +58,6 @@ Contributing
 Copyright
 ---------
 
-Copyright (c) 2012 Jarl Friis. See LICENSE.txt for
+Copyright (c) 2013 Jarl Friis. See LICENSE.txt for
 further details.
 

@@ -31,11 +31,11 @@ module RailsCommandHelpers
     @framework_version ||= `rails -v`[/^Rails (.+)$/, 1]
   end
 
-  def new_application_command
+  def new_application_command(name)
     case framework_version
-    when /^2/ then "rails"
-    when /^3/ then "rails new"
-    when /^4/ then "rails new"
+    when /^2/ then "rails #{name}"
+    when /^3/ then "rails new #{name}"
+    when /^4/ then "rails new #{name} --skip-sprockets --skip-javascript"
     end
   end
 
