@@ -1,6 +1,10 @@
 Utf8EnforcerWorkaround
 ======================
 
+[![Build Status](https://secure.travis-ci.org/softace/utf8_enforcer_workaround.png)](http://travis-ci.org/softace/utf8_enforcer_workaround)
+[![Dependency Status](https://gemnasium.com/softace/utf8_enforcer_workaround.png)](https://gemnasium.com/softace/utf8_enforcer_workaround)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/softace/utf8_enforcer_workaround)
+
 Make utf8 enforcer tag to be applied only for non-standards-complying
 browsers.
 
