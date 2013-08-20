@@ -18,3 +18,10 @@ end
 #require 'utf8_enforcer_workaround'
 
 #require 'rspec/expectations'
+Capybara.register_driver(:rack_test_compliant) do |app|
+  Capybara::RackTest::Driver.new(app, headers: { 'User-Agent' => 'Firefox' })
+end
+
+Capybara.register_driver(:rack_test_non_compliant) do |app|
+  Capybara::RackTest::Driver.new(app, headers: { 'User-Agent' => 'Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1)' })
+end

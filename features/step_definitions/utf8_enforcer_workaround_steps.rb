@@ -10,6 +10,10 @@ Then /there is (a|no) utf8 input tag/ do |exists|
   end
 end
 
-Then /I use Internet Explorer/ do
-   set_headers({'HTTP_USER_AGENT'=> "Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1)"})
+Given /I use Internet Explorer/ do
+  Capybara.current_driver = :rack_test_non_compliant
+end
+
+Given /I use a compliant browser/ do
+  Capybara.current_driver = :rack_test_non_compliant
 end

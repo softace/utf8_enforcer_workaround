@@ -3,14 +3,6 @@ Given /^I generate a new rails application$/ do
     When I run `bundle exec #{new_application_command} #{APP_NAME}`
     And I cd to "#{APP_NAME}"
     And I turn off class caching
-    And I write to "Gemfile" with:
-      """
-      source "http://rubygems.org"
-      gem "rails", "#{framework_version}"
-      gem "sqlite3"
-      gem "capybara"
-      gem "gherkin"
-      """
     And I configure the application to use "utf8_enforcer_workaround" from this project
     And I reset Bundler environment variable
     And I successfully run `bundle install --local`
@@ -147,7 +139,6 @@ end
 
 When /^I configure the application to use "([^\"]+)" from this project$/ do |name|
   append_to_gemfile "gem '#{name}', :path => '#{PROJECT_ROOT}'"
-  steps %{And I run `bundle install --local`}
 end
 
 When /^I configure the application to use "([^\"]+)"$/ do |gem_name|

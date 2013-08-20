@@ -32,15 +32,27 @@ module RailsCommandHelpers
   end
 
   def new_application_command
-    framework_version?("3") ? "rails new" : "rails"
+    case framework_version
+    when /^2/ then "rails"
+    when /^3/ then "rails new"
+    when /^4/ then "rails new"
+    end
   end
 
   def generator_command
-    framework_version?("3") ? "script/rails generate" : "script/generate"
+    case framework_version
+    when /^2/ then "script/generate"
+    when /^3/ then "script/rails generate"
+    when /^4/ then "rails generate"
+    end
   end
 
   def runner_command
-    framework_version?("3") ? "script/rails runner" : "script/runner"
+    case framework_version
+    when /^2/ then "script/runner"
+    when /^3/ then "script/rails runner"
+    when /^4/ then "rails runner"
+    end
   end
 end
 

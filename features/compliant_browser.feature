@@ -8,5 +8,6 @@ Feature: Default browsers does not see a utf8 param.
 
   Scenario: 
     Given I start the rails application
+    And I use a compliant browser
     When I go to the new user page
     Then there is no utf8 input tag
