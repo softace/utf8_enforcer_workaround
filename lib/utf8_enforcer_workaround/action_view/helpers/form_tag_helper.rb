@@ -18,5 +18,6 @@ end
 
 ActionView::Helpers::FormTagHelper.class_eval do
   include Utf8EnforcerWorkaround::ActionView::Helpers::FormTagHelper
-  alias_method_chain :utf8_enforcer_tag, :tag_removed
+  alias_method :utf8_enforcer_tag_without_tag_removed, :utf8_enforcer_tag
+  alias_method :utf8_enforcer_tag, :utf8_enforcer_tag_with_tag_removed
 end
