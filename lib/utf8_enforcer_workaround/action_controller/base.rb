@@ -6,7 +6,7 @@ module Utf8EnforcerWorkaround
       extend ActiveSupport::Concern
       module ClassMethods
         def utf8_enforcer_workaround
-          before_filter do
+          before_action do
             @utf8_enforcer_tag_enabled = browser.ie?
           end
         end
