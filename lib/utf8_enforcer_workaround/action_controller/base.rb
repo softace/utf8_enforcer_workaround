@@ -6,8 +6,14 @@ module Utf8EnforcerWorkaround
       extend ActiveSupport::Concern
       module ClassMethods
         def utf8_enforcer_workaround
-          before_filter do
-            @utf8_enforcer_tag_enabled = browser.ie?
+          if ActionPack::VERSION::STRING < "5.0.0"
+            before_filter do
+              @utf8_enforcer_tag_enabled = browser.ie?
+            end
+          elsif ActionPack::VERSION::STRING >= "5.0.0"
+            before_action do
+              @utf8_enforcer_tag_enabled = browser.ie?
+            end
           end
         end
       end
