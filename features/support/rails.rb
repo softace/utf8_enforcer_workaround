@@ -36,6 +36,8 @@ module RailsCommandHelpers
     when /^2/ then "rails #{name}"
     when /^3/ then "rails new #{name} --skip-sprockets --skip-javascript"
     when /^4/ then "rails new #{name} --skip-sprockets --skip-javascript"
+    when /^5/ then "rails new #{name} --skip-sprockets --skip-javascript"
+    else raise "No support for #{framework_version} yet, please open a FR on https://github.com/softace/utf8_enforcer_workaround/issues"
     end
   end
 
@@ -44,6 +46,8 @@ module RailsCommandHelpers
     when /^2/ then "script/generate"
     when /^3/ then "script/rails generate"
     when /^4/ then "rails generate"
+    when /^5/ then "rails generate"
+    else raise "No support for #{framework_version} yet, please open a FR on https://github.com/softace/utf8_enforcer_workaround/issues"
     end
   end
 
@@ -52,6 +56,8 @@ module RailsCommandHelpers
     when /^2/ then "script/runner"
     when /^3/ then "script/rails runner"
     when /^4/ then "rails runner"
+    when /^5/ then "rails runner"
+    else raise "No support for #{framework_version} yet, please open a FR on https://github.com/softace/utf8_enforcer_workaround/issues"
     end
   end
 end

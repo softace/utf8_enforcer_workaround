@@ -32,6 +32,7 @@ appraise "rails5.0" do
   gem "sqlite3", '~> 1.3.5'
   gem 'capybara'
   gem 'rspec'
+  gem 'bootsnap', '~> 1.0', require: false
 end
 
 appraise "rails5.1" do
@@ -39,6 +40,7 @@ appraise "rails5.1" do
   gem "sqlite3", '~> 1.4.0'
   gem 'capybara'
   gem 'rspec'
+  gem 'bootsnap', '~> 1.0', require: false
 end
 
 appraise "rails5.2" do
@@ -46,6 +48,7 @@ appraise "rails5.2" do
   gem "sqlite3", '~> 1.4.0'
   gem 'capybara'
   gem 'rspec'
+  gem 'bootsnap', '~> 1.0', require: false
 end
 
 appraise "rails6.0" do
@@ -53,4 +56,5 @@ appraise "rails6.0" do
   gem "sqlite3", '~> 1.4.0'
   gem 'capybara'
   gem 'rspec'
+  gem 'bootsnap', '~> 1.0', require: false
 end
