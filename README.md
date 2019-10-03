@@ -5,9 +5,9 @@ Utf8EnforcerWorkaround
 [![Dependency Status](https://gemnasium.com/softace/utf8_enforcer_workaround.png)](https://gemnasium.com/softace/utf8_enforcer_workaround)
 [![Code Climate](https://codeclimate.com/github/softace/utf8_enforcer_workaround.png)](https://codeclimate.com/github/softace/utf8_enforcer_workaround)
 
-Make utf8 enforcer tag to be applied only for non-standards-complying
-browsers.
+For Rails version < 6 Rails inserts a hidden form input element to make IE 8 and older use UTF8. This gem makes the utf8 enforcer element to be applied only for non-standards-complying browsers.
 
+For Rails 6 the default behaviour does not bloat forms with IE8- specific issues, so this gem is no longer relevant for Rails 6 and forward.
 
 Requirements
 ------------
