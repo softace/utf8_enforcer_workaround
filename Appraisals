@@ -50,11 +50,3 @@ appraise "rails5.2" do
   gem 'rspec'
   gem 'bootsnap', '~> 1.0', require: false
 end
-
-# appraise "rails6.0" do
-#   gem "rails", "~> 6.0.0"
-#   gem "sqlite3", '~> 1.4.0'
-#   gem 'capybara'
-#   gem 'rspec'
-#   gem 'bootsnap', '~> 1.0', require: false
-# end

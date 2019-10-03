@@ -20,6 +20,8 @@ Requirements
 * Rails 4.x
 * Rails 5.x
 
+From Rails 6.0.0 the default behaviour is *not* to have a hidden tag to enforce utf8 for IE 8 or older, see (https://github.com/rails/rails/commit/96eeea538c9c5b7b60d6f8baed2e86a9e2a920c9). So this gem is not relevant for Rails 6 and upwards.
+
 Installation
 ------------
 
