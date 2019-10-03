@@ -38,7 +38,9 @@ matrix:
   - rvm: 2.3.8
     gemfile: gemfiles/rails6.0.gemfile
   - rvm: 2.4.9
-    gemfile: gemfiles/rails6.0.gemfile
+    gemfile: gemfiles/rails4.0.gemfile # https://github.com/rails/rails/issues/25125
+  - rvm: 2.4.9
+    gemfile: gemfiles/rails4.1.gemfile # https://github.com/rails/rails/issues/25125
   - rvm: 2.5.7
     gemfile: gemfiles/rails4.0.gemfile # https://github.com/rails/rails/issues/25125
   - rvm: 2.5.7
