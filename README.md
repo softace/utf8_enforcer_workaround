@@ -66,7 +66,7 @@ bundle exec appraisal rake
 Releasing
 ---------
 
-Update `lib/utf8_enforcer_workaround/version.rb`
+Update `lib/utf8_enforcer_workaround/version.rb` and commit.
 Then
 
 ```
