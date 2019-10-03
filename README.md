@@ -1,6 +1,6 @@
 Utf8EnforcerWorkaround
 ======================
-
+[![Gem Version](https://badge.fury.io/rb/utf8_enforcer_workaround.svg)](https://badge.fury.io/rb/utf8_enforcer_workaround)
 [![Build Status](https://secure.travis-ci.org/softace/utf8_enforcer_workaround.png)](http://travis-ci.org/softace/utf8_enforcer_workaround)
 [![Dependency Status](https://gemnasium.com/softace/utf8_enforcer_workaround.png)](https://gemnasium.com/softace/utf8_enforcer_workaround)
 [![Code Climate](https://codeclimate.com/github/softace/utf8_enforcer_workaround.png)](https://codeclimate.com/github/softace/utf8_enforcer_workaround)
@@ -60,6 +60,20 @@ bundle exec appraisal generate
 bundle exec appraisal install
 bundle exec appraisal rake
 ```
+
+Releasing
+---------
+
+Update `lib/utf8_enforcer_workaround/version.rb`
+Then
+
+```
+git tag v<version>
+git tag push --tags
+gem build utf8_enforcer_workaround.gemspec
+gem push utf8_enforcer_workaround-<version>.gem
+```
+
 
 
 Contributing
