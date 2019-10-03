@@ -48,7 +48,18 @@ enforcer tag. Here is an example showing the default logic:
     before_filter do
       @utf8_enforcer_tag_enabled = browser.ie?
     end
-   
+
+Development
+-----------
+
+```
+gem install bundler
+bundle install
+bundle exec appraisal generate
+bundle exec appraisal install
+bundle exec appraisal rake
+```
+
 
 Contributing
 ------------

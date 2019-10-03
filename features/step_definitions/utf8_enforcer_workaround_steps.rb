@@ -2,9 +2,9 @@
 Then /there is (a|no) utf8 input tag/ do |exists|
   rails32_xpath = "//input[@name='utf8' and @type='hidden' and @value='✓']"
   if exists == 'a'
-    page.should have_xpath(rails32_xpath)
+    page.should have_xpath(rails32_xpath, visible: false)
   elsif exists == 'no'
-    page.should have_no_xpath(rails32_xpath)
+    page.should have_no_xpath(rails32_xpath, visible: false)
   else
     raise ArgumentError.new("exists shall be either 'a' or 'no'")
   end
