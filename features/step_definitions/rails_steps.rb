@@ -67,7 +67,7 @@ end
 
 Given /^I add this snippet to the User model:$/ do |snippet|
   file_name = "app/models/user.rb"
-  in_current_dir do
+  in_current_directory do
     content = File.read(file_name)
     File.open(file_name, 'w') { |f| f << content.sub(/end\Z/, "#{snippet}\nend") }
   end
@@ -75,14 +75,14 @@ end
 
 Given /^I add this snippet to the "(.*?)" controller:$/ do |controller_name, snippet|
   file_name = "app/controllers/#{controller_name}_controller.rb"
-  in_current_dir do
+  in_current_directory do
     content = File.read(file_name)
     File.open(file_name, 'w') { |f| f << content.sub(/end\Z/, "#{snippet}\nend") }
   end
 end
 
 Given /^I start the rails application$/ do
-  in_current_dir do
+  in_current_directory do
     require "./config/environment"
     require "capybara/rails"
   end
@@ -93,7 +93,7 @@ Given /^I reload my application$/ do
 end
 
 When %r{I turn off class caching} do
-  in_current_dir do
+  in_current_directory do
     file = "config/environments/test.rb"
     config = IO.read(file)
     config.gsub!(%r{^\s*config.cache_classes.*$},
@@ -107,7 +107,7 @@ Given /^I update my application to use Bundler$/ do
     boot_config_template = File.read('features/support/fixtures/boot_config.txt')
     preinitializer_template = File.read('features/support/fixtures/preinitializer.txt')
     gemfile_template = File.read('features/support/fixtures/gemfile.txt')
-    in_current_dir do
+    in_current_directory do
       content = File.read("config/boot.rb").sub(/Rails\.boot!/, boot_config_template)
       File.open("config/boot.rb", "w") { |file| file.write(content) }
       File.open("config/preinitializer.rb", "w") { |file| file.write(preinitializer_template) }
@@ -120,7 +120,7 @@ Given /^I add the paperclip rake task to a Rails 2.3 application$/ do
   if framework_version?("2.3")
     require 'fileutils'
     source = File.expand_path('lib/tasks/paperclip.rake')
-    destination = in_current_dir { File.expand_path("lib/tasks") }
+    destination = in_current_directory { File.expand_path("lib/tasks") }
     FileUtils.cp source, destination
     append_to "Rakefile", "require 'paperclip'"
   end
@@ -166,7 +166,7 @@ end
 
 module FileHelpers
   def append_to(path, contents)
-    in_current_dir do
+    in_current_directory do
       File.open(path, "a") do |file|
         file.puts
         file.puts contents
@@ -179,7 +179,7 @@ module FileHelpers
   end
 
   def comment_out_gem_in_gemfile(gemname)
-    in_current_dir do
+    in_current_directory do
       gemfile = File.read("Gemfile")
       gemfile.sub!(/^(\s*)(gem\s*['"]#{gemname})/, "\\1# \\2")
       File.open("Gemfile", 'w'){ |file| file.write(gemfile) }
