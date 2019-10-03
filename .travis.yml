@@ -44,4 +44,8 @@ matrix:
     gemfile: gemfiles/rails4.0.gemfile # https://github.com/rails/rails/issues/25125
   - rvm: 2.5.7
     gemfile: gemfiles/rails4.1.gemfile # https://github.com/rails/rails/issues/25125
+  - rvm: 2.6.5
+    gemfile: gemfiles/rails4.0.gemfile # https://github.com/rails/rails/issues/25125
+  - rvm: 2.6.5
+    gemfile: gemfiles/rails4.1.gemfile # https://github.com/rails/rails/issues/25125
 

@@ -18,6 +18,7 @@ Requirements
 
 * Rails 3.x
 * Rails 4.x
+* Rails 5.x
 
 Installation
 ------------
@@ -45,7 +46,7 @@ Alternatively you can write your own logic in your
 ApplicationController to decide whether or not to include the utf8
 enforcer tag. Here is an example showing the default logic:
 
-    before_filter do
+    before_action do
       @utf8_enforcer_tag_enabled = browser.ie?
     end
 
@@ -73,6 +74,6 @@ Contributing
 Copyright
 ---------
 
-Copyright (c) 2013 Jarl Friis. See LICENSE.txt for
+Copyright (c) 2012-2019 Jarl Friis. See LICENSE.txt for
 further details.
 
