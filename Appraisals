@@ -47,3 +47,10 @@ appraise "rails5.2" do
   gem 'capybara'
   gem 'rspec'
 end
+
+appraise "rails6.0" do
+  gem "rails", "~> 6.0.0"
+  gem "sqlite3", '~> 1.4.0'
+  gem 'capybara'
+  gem 'rspec'
+end
