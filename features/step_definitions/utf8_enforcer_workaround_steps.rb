@@ -15,5 +15,5 @@ Given /I use Internet Explorer/ do
 end
 
 Given /I use a compliant browser/ do
-  Capybara.current_driver = :rack_test_non_compliant
+  Capybara.current_driver = :rack_test_compliant
 end
